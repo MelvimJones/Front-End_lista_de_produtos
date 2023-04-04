@@ -1,30 +1,12 @@
 
-<!-- <template>
-    <div class="gradient">
-        <v-row no-gutters align="center" justify="center">
-
-            <v-col v-for="(prod, i ) in produtos" :key="i" cols="3">
-                <v-sheet class="pa-2 ma-2" align="center" justify="center">
-                    <v-img :src="prod.imagem" :alt="prod.descricao" width="200" height="200" />
-                    <v-sheet class="ma-2 pa-2">
-                        {{ prod.descricao }}
-                    </v-sheet>
-                </v-sheet>
-            </v-col>
-
-        </v-row>
-    </div>
-</template> -->
 
 <template>
     <div class="gradient">
         <v-container>
             <v-row no-gutters>
-
-                <v-col v-for="(prod, i ) in produtos" :key="i" cols="3">
+                <v-col v-for="(prod, i ) in produtos" :key="i">
                     <div id="cad">
-                        <v-img :src="prod.imagem" center
-                        contain :alt="prod.descricao" width="200" height="200"  />
+                        <v-img :src="prod.imagem" center contain :alt="prod.descricao" width="200" height="200" />
                         <v-sheet id="descricao" class="ma-2 pa-2">
                             {{ prod.descricao }}
                         </v-sheet>
@@ -131,27 +113,36 @@ export default {
 
 </script>
 <!--
-    background: linear-gradient(45deg, #6096B4, #93BFCF, #BDCDD6, #EEE9DA);
+    codigos antigos
+
+    background: linear-gradient(45deg, #6096B4, #93BFCF, #BDCDD6, #EEE9DA);    
+    width: 100vh;
+    height: 100vh;
   -->
   
 <style>
 .gradient {
+    margin-top: 57px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #FFFFD2, #E4E4E4, #8293FF, #503BFF);
-    background-size: 300% 300%;
-    animation: colors 15s ease infinite;
+    background: linear-gradient(45deg, #49385d, #FFFFD2, #E4E4E4, #8293FF, #503BFF);
+    background-size:400% 400%;
+    background-repeat: no-repeat;
+    animation: colors 20s ease infinite;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
 #cad {
     background-color: #ffffff;
     padding: 10px;
-    margin: 5px 9px;
+    margin: 10px 9px 0 9px;
     height: 300px;
     border-radius: 20px;
-    
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 #descricao {
@@ -196,7 +187,8 @@ export default {
     align-content: stretch;
     flex-direction: row;
 }
-#img1{
+
+#img1 {
     display: flex;
     align-items: center;
     justify-content: center;
