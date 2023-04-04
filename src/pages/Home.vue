@@ -23,7 +23,8 @@
 
                 <v-col v-for="(prod, i ) in produtos" :key="i" cols="3">
                     <div id="cad">
-                        <v-img :src="prod.imagem" :alt="prod.descricao" width="200" height="200" />
+                        <v-img :src="prod.imagem" center
+                        contain :alt="prod.descricao" width="200" height="200"  />
                         <v-sheet id="descricao" class="ma-2 pa-2">
                             {{ prod.descricao }}
                         </v-sheet>
@@ -129,6 +130,9 @@ export default {
 
 
 </script>
+<!--
+    background: linear-gradient(45deg, #6096B4, #93BFCF, #BDCDD6, #EEE9DA);
+  -->
   
 <style>
 .gradient {
@@ -136,9 +140,9 @@ export default {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(45deg, #6096B4, #93BFCF, #BDCDD6, #EEE9DA);
+    background: linear-gradient(45deg, #FFFFD2, #E4E4E4, #8293FF, #503BFF);
     background-size: 300% 300%;
-    animation: colors 5s ease infinite;
+    animation: colors 15s ease infinite;
 }
 
 #cad {
@@ -147,6 +151,7 @@ export default {
     margin: 5px 9px;
     height: 300px;
     border-radius: 20px;
+    
 }
 
 #descricao {
@@ -190,5 +195,10 @@ export default {
     flex-wrap: wrap;
     align-content: stretch;
     flex-direction: row;
+}
+#img1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
