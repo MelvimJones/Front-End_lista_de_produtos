@@ -134,11 +134,12 @@ export default {
 
 #cad {
     background-color: #ffffff;
+    box-shadow: 0.1px 0.5px 20px #5c5858d1;
     padding: 10px;
     margin: 10px 9px 0 9px;
     height: 300px;
     border-radius: 20px;
-
+    
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -165,7 +166,7 @@ export default {
 
 }
 
-.my-component {}
+
 
 #card {
     display: flex;
