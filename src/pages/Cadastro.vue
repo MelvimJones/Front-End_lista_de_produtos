@@ -45,25 +45,25 @@
                 <v-navigation-drawer class="bg-deep-purple" theme="dark" permanent>
                     <v-list color="transparent">
                         <div class="cardCadastro">
-                            
-                                <v-row>
-                                    <v-col>Descrição:</v-col>
-                                </v-row>
-                                <v-row>
-                                    <v-col>
-                                        <v-text-field v-model="produto.descricao" />
-                                    </v-col>
-                                </v-row>
 
-                                <v-row>
-                                    <v-col>Endereço da Imagem:</v-col>
-                                </v-row>
-                                <v-row>
-                                    <v-col>
-                                        <v-text-field v-model="produto.imagem" />
-                                    </v-col>
-                                </v-row>
-                            
+                            <v-row>
+                                <v-col>Descrição:</v-col>
+                            </v-row>
+                            <v-row>
+                                <v-col>
+                                    <v-text-field v-model="produto.descricao" />
+                                </v-col>
+                            </v-row>
+
+                            <v-row>
+                                <v-col>Endereço da Imagem:</v-col>
+                            </v-row>
+                            <v-row>
+                                <v-col>
+                                    <v-text-field v-model="produto.imagem" />
+                                </v-col>
+                            </v-row>
+
                         </div>
                         <v-card-actions>
                             <v-btn variant="tonal" @click="cancelar()"> cancelar </v-btn>
@@ -90,7 +90,8 @@
 
 
         <!-- DADOS -->
-        <v-card class="mx-auto" max-width="8050">
+<!-- 
+         <v-card class="mx-auto" max-width="8050">
 
 
             <v-list>
@@ -100,11 +101,41 @@
 
                     <v-btn variant="tonal" icon="mdi-delete" @click="deletarProduto(prod._id, i)"></v-btn>
                     <v-btn variant="tonal" icon="mdi-pencil" @click="editarProduto(prod._id, i)"></v-btn>
-
                 </v-list-item>
 
             </v-list>
-        </v-card>
+        </v-card> 
+         -->
+
+         <div class="cadastroProdutos">
+            <v-table id="tabela" >
+               <thead>
+                 <tr>
+                   <th>
+                     Produto
+                   </th>
+                   <th>
+                     Descrição
+                   </th>
+                   <th></th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr
+                 v-for="(prod, i ) in produtos" :key="i">
+                   <td id="tabelaImg" ><v-img :src="prod.imagem" alt="Imagem" width="50" height="50"></v-img></td>
+                   <td>{{ prod.descricao }}</td>
+                   <td>
+                    <v-btn variant="tonal" icon="mdi-delete" @click="deletarProduto(prod._id, i)"></v-btn>
+                    <v-btn variant="tonal" icon="mdi-pencil" @click="editarProduto(prod._id, i)"></v-btn>
+                   </td>
+                 </tr>
+               </tbody>
+             </v-table>
+         </div>
+
+
+
 
 
     </div>
@@ -126,8 +157,7 @@ export default {
             },
             produto: {},
             produtos: [],
-
-
+            
         };
     },
 
@@ -213,6 +243,7 @@ export default {
 </script>
   
 <style>
+
 .gradient {
     margin-top: 57px;
     display: flex;
@@ -227,6 +258,14 @@ export default {
 
 .cardCadastro {
     margin: 10px 10px 1px 10px;
+}
+
+#tabela{
+    background-color: rgba(255, 255, 255, 0);
+}
+#tabelaImg{
+    background-color: #ffffff;
+    border-radius: 10px;
 }
 
 .v-col {
