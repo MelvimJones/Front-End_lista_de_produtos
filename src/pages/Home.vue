@@ -28,6 +28,7 @@ export default {
 
     data() {
         return {
+            searchTerm: '',
             mensagens: {
                 salvoSucesso: false,
                 excluidoSucesso: false
@@ -124,8 +125,8 @@ export default {
 .gradient {
     margin-top: 57px;
     display: flex;
-    background: linear-gradient(45deg, #49385d, #FFFFD2, #E4E4E4, #8293FF, #503BFF);
-    background-size:400% 400%;
+    background: linear-gradient(45deg, #FFFFD2, #E4E4E4, #8293FF, #503BFF);
+    background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: colors 20s ease infinite;
     flex-direction: row;
@@ -139,7 +140,7 @@ export default {
     margin: 10px 9px 0 9px;
     height: 300px;
     border-radius: 20px;
-    
+
     display: flex;
     align-items: center;
     flex-direction: column;
