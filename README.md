@@ -48,7 +48,7 @@ FERRAMENTAS USADAS:
 
 
 
-## Project setup
+## Project Setup
 ```
 npm install
 ```
