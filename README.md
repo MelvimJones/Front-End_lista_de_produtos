@@ -10,7 +10,7 @@
 <img src="https://github.com/MelvimJones/Front-End_lista_de_produtos/blob/main/src/assets/Tela2.jpg" width="400">
 </div>
 
-## Project setup
+## Project Setup
 
 ```
 # yarn
